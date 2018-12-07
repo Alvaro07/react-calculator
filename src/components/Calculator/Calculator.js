@@ -200,7 +200,6 @@ class Calculator extends React.Component {
 
   render() {
 		
-		console.log(this.state)
 		let result = '0';
 
     if ( this.state.operatorB !== '') {
