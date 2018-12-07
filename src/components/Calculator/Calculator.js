@@ -13,6 +13,28 @@ Button.defaultProps = {
 
 
 // -----------------
+// Calculator's buttons
+
+
+// class Result extends React.Component {
+
+// 	handleKeyUp = () => {
+
+// 	}
+
+// 	render(){
+// 		return ( 
+// 			<input 
+// 				className="calculator__result" 
+// 				type="text" value={result} 
+// 				onChange={this.props.onChange} onKeyUp={(e) => this.handleKeyUp(e)} />
+// 		)
+// 	}
+// }
+
+
+
+// -----------------
 // Calculator component
 
 class Calculator extends React.Component {
@@ -181,8 +203,34 @@ class Calculator extends React.Component {
     });
 
   }
-  
-	
+
+	handleOnChange = (e) => {
+		 // Only for keyUp fix
+	}
+
+	handleKeyUp = (e) => {
+		let value = e.key;
+		const regexNumber = /^[0-9\b]+$/;
+		
+		if (regexNumber.test(value)) {
+
+			if ( this.state.operator === '='){
+				this.setState({ 
+					operatorA: value,
+					operator: null,
+					history: []
+				});
+			
+			} else {
+
+				this.state.operatorB === '' ? 
+					this.setState({ operatorA: this.state.operatorA + value }) : 
+					this.setState({ operatorB: this.state.operatorB + value });
+
+			}
+		}
+	}
+
 	//  ----------------
 	//	Reset function
 	
@@ -201,6 +249,7 @@ class Calculator extends React.Component {
   render() {
 		
 		let result = '0';
+		console.log(this.state)
 
     if ( this.state.operatorB !== '') {
       result = parseFloat(this.state.operatorB).toString();
@@ -216,8 +265,15 @@ class Calculator extends React.Component {
     return (
 
 			<div className="calculator">
-				<span className="calculator__result" >{result}</span>
+				{/* <span className="calculator__result" >{result}</span> */}
 				
+				<input 
+					className="calculator__result" 
+					type="text" value={result} 
+					onChange={(e) => this.handleOnChange(e)} 
+					onKeyUp={(e) => this.handleKeyUp(e)} 
+				/>
+
 				<div className="calculator__history">
 					<ul className={`calculator__history__list ${!this.state.history.length > 0 ? 'is-hide' : ''}`} >
 						{this.state.history != null ? 
@@ -251,6 +307,8 @@ class Calculator extends React.Component {
     );
   }
 }
+
+
 
 
 
