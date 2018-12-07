@@ -1,6 +1,6 @@
 # A React Calculator
 
-A calculator developed in React.js and displayed in Github pages.
+A calculator developed in React.js and deployed in Github pages.
 
 Link: [alvaro07.github.io/react-calculator](https://alvaro07.github.io/react-calculator/)
 
