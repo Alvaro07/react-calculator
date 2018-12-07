@@ -218,10 +218,12 @@ class Calculator extends React.Component {
 			<div className="calculator">
 				<span className="calculator__result" >{result}</span>
 				
-				<ul className={`calculator__history ${!this.state.history.length > 0 ? 'is-hide' : ''}`} >
+				<div className="calculator__history">
+					<ul className={`calculator__history__list ${!this.state.history.length > 0 ? 'is-hide' : ''}`} >
 						{this.state.history != null ? 
 							this.state.history.map((value, i) => <li key={i}>{value}</li>) : null}
-				</ul>
+					</ul>
+				</div>
 
 				<Button onClick={(e) => this.handleNumber(e, 1)}>1</Button>
 				<Button onClick={(e) => this.handleNumber(e, 2)}>2</Button>

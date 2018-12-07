@@ -33,37 +33,41 @@
 	
 	&__history {
 		grid-column: 1 / span 4;
-		display: flex;
-		align-items: center;
-		justify-content: flex-end;
 		position: relative;
 		
-		font-size: 14px;
-		font-family: 'Roboto', sans-serif;
-		color: white;
 		font-weight: 700;
-		
 		background-color: var(--medium-gray);
 		padding:0 15px 0 60px;
 		
-		li {
-			padding-left: 5px;
+		&__list {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			overflow: hidden;
+			height: 100%;
+
+			font-size: 14px;
+			font-family: 'Roboto', sans-serif;
+			color: white;
+			
+			&::before {
+				content: 'HISTORY';
+				position: absolute;
+				left: 10px;
+				bottom: 9px;
+				font-size: 10px;
+				font-weight: 500;
+				color: var(--yellow);
+			}
+			
+			&.is-hide::before {
+				display: none;
+			}
+
+			li {
+				padding-left: 5px;
+			}
 		}
-		
-		&::before {
-			content: 'HISTORY';
-			position: absolute;
-			left: 10px;
-			bottom: 9px;
-			font-size: 10px;
-			font-weight: 500;
-			color: var(--yellow);
-		}
-		
-		&.is-hide::before {
-			display: none
-		}
-		
 	}
 	
 	&__btn {
