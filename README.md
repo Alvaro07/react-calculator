@@ -2,7 +2,7 @@
 
 A calculator developed in React.js and displayed in Github pages.
 
-[alvaro07.github.io/react-calculator](https://alvaro07.github.io/react-calculator/)
+Link: [alvaro07.github.io/react-calculator](https://alvaro07.github.io/react-calculator/)
 
 ---
 
