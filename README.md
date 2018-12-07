@@ -1,7 +1,5 @@
 # A React Calculator
 
----
-
-![alt text](/preview-image.jpg "Preview image")
+![alt text](/preview-image.png "Preview image")
 
 
