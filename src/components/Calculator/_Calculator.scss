@@ -1,15 +1,14 @@
 
 .calculator {
-	width: 320px;
-	height: 445px;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: 1fr 30px repeat(5, 1fr);
+	grid-template-columns: repeat(4, 75px);
+	grid-template-rows: 65px 30px repeat(5, 65px);
 	grid-gap: 2px;
-	background-color: var(--dark-gray);
-	border: 1px solid var(--dark-gray);
-	border-top-left-radius: 15px;
 	overflow: hidden;
+	
+	border: 2px solid var(--dark-gray);
+	background-color: var(--dark-gray);
+	border-top-left-radius: 15px;
 	box-shadow: 6px 6px 15px 1px rgba(#18597D, .5);
 	
 	&__result {
